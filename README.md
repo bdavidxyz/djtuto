@@ -59,6 +59,17 @@ ALTER ROLE myprojectuser SET timezone TO 'UTC';
 
 GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
 \q
+
+```
+
+## Add .gitignore file
+
+Create a .gitignore file at the root of the repository with following content :
+
+```shell
+.venv
+*.sqlite3
+__pycache__
 ```
 
 ## Create environment
@@ -106,4 +117,18 @@ DATABASES = {
         'PORT': '',
     }
 }
+```
+
+## Make migrations
+
+```shell
+../myprojectdir/manage.py makemigrations
+../myprojectdir/manage.py migrate
+../myprojectdir/manage.py createsuperuser
+```
+
+## Run local server
+
+```shell
+../myprojectdir/manage.py createsuperuser
 ```
